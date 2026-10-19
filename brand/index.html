@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MGM Lifts — бранд наръчник</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Unbounded:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .bb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .bb-tile { border-radius: var(--radius); padding: 40px; display: grid; place-items: center; min-height: 240px; border: 1px solid var(--line); }
+    .bb-tile img { max-height: 72px; }
+    .bb-tile.wide { grid-column: span 2; }
+    .bb-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 10px; }
+    .swatch-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .color { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+    .color div { height: 140px; }
+    .color p { margin: 0; padding: 14px 16px; font-size: 14px; }
+    .color p b { display: block; font-family: var(--font-display); font-weight: 500; }
+    .color p span { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+    .type-spec { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+    .type-spec:first-child { border-top: 1px solid var(--line); }
+    .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .principle { padding: 28px; border: 1px solid var(--line-on-dark); border-radius: var(--radius); }
+    .principle h3 { font-size: 20px; margin-bottom: 10px; }
+    .principle p { color: var(--muted-on-dark); margin: 0 0 12px; font-size: 15px; }
+    .principle .do { margin-bottom: 8px; color: var(--bone); font-size: 14px; }
+    .principle .dont { color: var(--muted-on-dark); font-size: 14px; text-decoration: line-through; text-decoration-color: rgba(201,160,99,.6); }
+    .construct { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .bb-nav { display: flex; gap: 22px; margin-left: auto; font-size: 15px; font-weight: 600; color: var(--muted-on-dark); }
+    .bb-nav a:hover { color: var(--bone); }
+    @media (max-width: 640px) { .bb-nav { display: none; } }
+    .construct svg { width: 100%; max-width: 360px; justify-self: center; }
+    @media (max-width: 900px) {
+      .bb-grid, .principles { grid-template-columns: 1fr; }
+      .bb-tile.wide { grid-column: auto; }
+      .swatch-row { grid-template-columns: repeat(2, 1fr); }
+      .type-spec, .construct { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html" aria-label="MGM Lifts — към сайта">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="6" fill="none" stroke="currentColor" stroke-width="3"/><path d="M16 48V16l16 17 16-17v32" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square"/><path d="M32 40l-6 8h12z" fill="#c9a063"/></svg>
+        <span class="brand-word"><b>MGM</b><span>LIFTS</span></span>
+      </a>
+      <nav class="bb-nav" aria-label="Раздели">
+        <a href="#logo">Лого</a><a href="#cvetove">Цветове</a><a href="#shrift">Шрифт</a><a href="#glas">Тон</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero dark">
+      <div class="wrap">
+        <div class="crumbs">Бранд наръчник · v1.0</div>
+        <h1 class="h-xl">Всяка сграда има етажи. <span class="accent">Ние ги свързваме.</span></h1>
+        <p class="lead">Визуалната идентичност на MGM Lifts. Идеята: всяка сграда има етажи, а ние сме това, което ги свързва. Затова сайтът е построен като сграда — всяка секция е етаж, а индикаторът в ъгъла показва къде се намирате.</p>
+      </div>
+    </section>
+
+    <section class="section" id="logo">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">01 — Логото</span>
+          <h2 class="h-lg">Буквата M, рамката и стрелката нагоре.</h2>
+          <p class="lead">Знакът събира три неща: „M“ от MGM, рамката на асансьорна врата и бутона за повикване ▲, разположен там, където двете рамене на буквата се срещат.</p>
+        </div>
+
+        <div class="construct">
+          <svg viewBox="0 0 64 64" aria-label="Конструкция на знака">
+            <defs><pattern id="g" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M4 0H0V4" fill="none" stroke="#101317" stroke-opacity=".08" stroke-width=".2"/></pattern></defs>
+            <rect width="64" height="64" fill="url(#g)"/>
+            <rect x="2" y="2" width="60" height="60" rx="6" fill="none" stroke="#101317" stroke-width="3"/>
+            <path d="M16 48V16l16 17 16-17v32" fill="none" stroke="#101317" stroke-width="5" stroke-linecap="square"/>
+            <path d="M32 40l-6 8h12z" fill="#c9a063"/>
+            <path d="M32 2v60M2 32h60" stroke="#c9a063" stroke-width=".3" stroke-dasharray="1 1"/>
+          </svg>
+          <div>
+            <h3 class="h-md" style="margin-bottom:14px">Правила</h3>
+            <ul class="chips" style="margin-top:0">
+              <li>Минимален размер: 24 px / 8 мм</li>
+              <li>Свободно поле: ½ от височината на знака</li>
+              <li>Стрелката е винаги месинг</li>
+              <li>Без сенки, градиенти и завъртане</li>
+            </ul>
+            <p style="margin-top:24px;color:var(--muted)">Файлове: <code>assets/brand/logo-dark.svg</code>, <code>logo-light.svg</code>, <code>logo-mark.svg</code>, <code>favicon.svg</code></p>
+          </div>
+        </div>
+
+        <div class="bb-grid" style="margin-top:56px">
+          <div>
+            <div class="bb-tile" style="background:var(--paper)"><img src="../assets/brand/logo-dark.svg" alt="Лого върху светъл фон"></div>
+            <div class="bb-label">Основно — светъл фон</div>
+          </div>
+          <div>
+            <div class="bb-tile" style="background:var(--ink)"><img src="../assets/brand/logo-light.svg" alt="Лого върху тъмен фон"></div>
+            <div class="bb-label">Инверсно — тъмен фон</div>
+          </div>
+          <div>
+            <div class="bb-tile" style="background:var(--bone)"><img src="../assets/brand/logo-mark.svg" alt="Самостоятелен знак" style="max-height:96px"></div>
+            <div class="bb-label">Знак — икона, социални мрежи</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bone" id="cvetove">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">02 — Цветове</span>
+          <h2 class="h-lg">Графит, кост и месинг.</h2>
+          <p class="lead">Палитрата идва от самите кабини: тъмна стомана, топла светлина и месингови детайли. Месингът е акцент — никога не повече от 10% от повърхността.</p>
+        </div>
+        <div class="swatch-row">
+          <div class="color"><div style="background:#101317"></div><p><b>Графит</b><span>#101317</span></p></div>
+          <div class="color"><div style="background:#20252c"></div><p><b>Стомана</b><span>#20252C</span></p></div>
+          <div class="color"><div style="background:#f4f1eb"></div><p><b>Кост</b><span>#F4F1EB</span></p></div>
+          <div class="color"><div style="background:#c9a063"></div><p><b>Месинг</b><span>#C9A063</span></p></div>
+          <div class="color"><div style="background:#9aa3ab"></div><p><b>Инокс</b><span>#9AA3AB</span></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="shrift">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">03 — Типография</span>
+          <h2 class="h-lg">Три шрифта, три роли.</h2>
+          <p class="lead">И трите са безплатни (Google Fonts) и поддържат българска кирилица.</p>
+        </div>
+        <div class="type-spec">
+          <div><b>Unbounded</b><div class="bb-label">Заглавия · 400–500</div></div>
+          <div class="h-lg">Асансьори с характер</div>
+        </div>
+        <div class="type-spec">
+          <div><b>Manrope</b><div class="bb-label">Текст · 400–700</div></div>
+          <div style="font-size:19px">Проектираме, доставяме, монтираме и поддържаме асансьори — от първия оглед до последния сервиз.</div>
+        </div>
+        <div class="type-spec">
+          <div><b>JetBrains Mono</b><div class="bb-label">Етикети, номера</div></div>
+          <div class="mono" style="letter-spacing:.14em;text-transform:uppercase;color:var(--brass-ink)">▲ Етаж 03 — Задвижване</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="glas">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">04 — Тон на гласа</span>
+          <h2 class="h-lg">Говорим като инженер, на когото имате доверие.</h2>
+          <p class="lead">Кратко, конкретно, без суперлативи. Обещаваме само това, което можем да покажем.</p>
+        </div>
+        <div class="principles">
+          <div class="principle">
+            <h3>Конкретно</h3>
+            <p>Цифри, стандарти, имена на производители.</p>
+            <div class="do">„Сертифицирани по БДС EN 81-20:2020“</div>
+            <div class="dont">„Най-сигурните асансьори в България“</div>
+          </div>
+          <div class="principle">
+            <h3>Спокойно</h3>
+            <p>Асансьорът е въпрос на безопасност. Тонът е уверен, не крещящ.</p>
+            <div class="do">„Ще огледаме сградата и ще ви препоръчаме системата.“</div>
+            <div class="dont">„Обадете се СЕГА!!!“</div>
+          </div>
+          <div class="principle">
+            <h3>Човешко</h3>
+            <p>Пишем на „вие“, на прост български, без излишен технически жаргон.</p>
+            <div class="do">„Никой не остава заклещен при спиране на тока.“</div>
+            <div class="dont">„Система за аварийно евакуационно придвижване“</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bone">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">05 — Фотография</span>
+          <h2 class="h-lg">Истински кабини, истински обекти.</h2>
+          <p class="lead">Показваме само наши изпълнения — без стокови снимки на небостъргачи. Снимаме вертикално, при включено осветление в кабината, с отворена врата и чист под.</p>
+        </div>
+        <div class="cabins">
+          <div class="cabin-card"><figure><img src="../assets/img/kabini/standard.jpg" alt="Пример: кабина Standard" loading="lazy"></figure></div>
+          <div class="cabin-card"><figure><img src="../assets/img/kabini/inox.jpg" alt="Пример: кабина Inox" loading="lazy"></figure></div>
+          <div class="cabin-card"><figure><img src="../assets/img/kabini/mg-3.jpg" alt="Пример: кабина MG-3" loading="lazy"></figure></div>
+          <div class="cabin-card"><figure><img src="../assets/img/kabini/mg-4.jpg" alt="Пример: кабина MG-4" loading="lazy"></figure></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-bottom" style="padding-top:0">
+      <span>MGM Lifts · Бранд наръчник v1.0</span>
+      <a href="../index.html">Към сайта →</a>
+    </div>
+  </footer>
+</body>
+</html>
