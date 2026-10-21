@@ -4,22 +4,22 @@
    ========================================================================== */
 
 :root {
-  --ink: #141619;
-  --ink-2: #1c1f23;
-  --ink-3: #272b30;
+  --ink: #3375c1;
+  --ink-2: #3f80ca;
+  --ink-3: #e3e9f1;
   --bone: #f1f2f4;
   --paper: #fbfbfc;
   --steel: #9aa3ab;
   --steel-2: #c9ced3;
   --text: #16191d;
   --muted: #5d6268;
-  --muted-on-dark: #a7abb0;
+  --muted-on-dark: #ffffff;
   --line: rgba(20, 22, 25, 0.12);
-  --line-on-dark: rgba(241, 242, 244, 0.14);
+  --line-on-dark: rgba(255, 255, 255, 0.3);
   --brand: #3375c1;
   --brand-hover: #2a62a3;
-  --accent: #8cbbe6;
-  --accent-2: #b9d6f1;
+  --accent: #d6e7fa;
+  --accent-2: #ffffff;
 
   --font-display: "Unbounded", "Manrope", system-ui, sans-serif;
   --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -95,8 +95,8 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 500; 
 .btn:hover svg { transform: translateX(4px); }
 .btn-primary { background: var(--brand); color: #fff; }
 .btn-primary:hover { background: var(--brand-hover); }
-.dark .btn-primary, .site-header .btn-primary { box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); }
-.dark .btn-primary:hover, .site-header .btn-primary:hover { background: #4a86cf; }
+.dark .btn-primary, .site-header .btn-primary { background: #fff; color: var(--brand); }
+.dark .btn-primary:hover, .site-header .btn-primary:hover { background: var(--bone); }
 .btn-ghost { border-color: var(--line); color: var(--text); }
 .btn-ghost:hover { border-color: var(--text); }
 .dark .btn-ghost { border-color: var(--line-on-dark); color: var(--bone); }
@@ -115,7 +115,7 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 500; 
 
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(20, 22, 25, 0.94);
+  background: rgba(51, 117, 193, 0.97);
   backdrop-filter: saturate(1.4) blur(10px);
   -webkit-backdrop-filter: saturate(1.4) blur(10px);
   color: var(--bone);
@@ -174,7 +174,7 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 500; 
   .nav a { padding: 16px 0; font-size: 18px; border-bottom: 1px solid var(--line-on-dark); }
   .nav a[aria-current="page"]::after { display: none; }
   .nav a[aria-current="page"] { color: var(--accent); }
-  .nav .nav-mobile-cta { display: flex; margin-top: 20px; border: 0; justify-content: center; color: #fff; }
+  .nav .nav-mobile-cta { display: flex; margin-top: 20px; border: 0; justify-content: center; color: var(--brand); }
   .nav-open .nav { opacity: 1; visibility: visible; transform: none; }
 }
 
@@ -206,18 +206,18 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 500; 
 /* Асансьорна врата — подписният елемент */
 .lift {
   position: relative; align-self: end;
-  padding: 18px 18px 0; background: linear-gradient(180deg, #2b2f35, #1c1f23);
+  padding: 18px 18px 0; background: linear-gradient(180deg, #4a87cd, #3f80ca);
   border-radius: 6px 6px 0 0; box-shadow: inset 0 0 0 1px var(--line-on-dark);
 }
 .lift-display {
   display: flex; align-items: center; justify-content: center; gap: 10px;
   width: 112px; margin: 0 auto 16px; padding: 8px 0; border-radius: 3px;
-  background: #07090b; color: var(--accent-2); font-family: var(--font-mono); font-size: 18px; letter-spacing: 0.1em;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06), 0 0 24px rgba(201,160,99,.12);
+  background: #fff; color: var(--brand); font-family: var(--font-mono); font-size: 18px; letter-spacing: 0.1em;
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
 }
 .lift-display .arrow { font-size: 12px; animation: blink 1.6s steps(2) infinite; }
 @keyframes blink { 50% { opacity: .25; } }
-.lift-car { position: relative; aspect-ratio: 3 / 4; overflow: hidden; background: #0b0d10; }
+.lift-car { position: relative; aspect-ratio: 3 / 4; overflow: hidden; background: var(--brand-hover); }
 .lift-car img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); transition: transform 2.4s var(--ease) .5s; }
 .lift-door {
   position: absolute; top: 0; bottom: 0; width: 50%; z-index: 2;
@@ -234,7 +234,7 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 500; 
 .lift-caption {
   position: absolute; left: 18px; right: 18px; bottom: 0; z-index: 3;
   display: flex; justify-content: space-between; padding: 14px 16px;
-  background: linear-gradient(0deg, rgba(10,12,14,.85), transparent);
+  background: linear-gradient(0deg, rgba(51,117,193,.92), transparent);
   font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--bone);
 }
 
@@ -488,7 +488,7 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 500; 
 
 /* ---------- Футър ---------- */
 
-.site-footer { background: var(--ink); color: var(--muted-on-dark); padding: 72px 0 32px; font-size: 15px; }
+.site-footer { background: var(--ink); color: var(--muted-on-dark); padding: 72px 0 32px; font-size: 15px; border-top: 1px solid var(--line-on-dark); }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 56px; border-bottom: 1px solid var(--line-on-dark); }
 .footer-grid h4 { font-family: var(--font-mono); font-weight: 400; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
 .footer-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
@@ -504,8 +504,8 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 500; 
 .floor-indicator {
   position: fixed; right: 20px; bottom: 20px; z-index: 40;
   display: flex; align-items: center; gap: 12px; padding: 10px 14px 10px 12px;
-  background: #07090b; color: var(--accent-2); border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.07);
+  background: var(--brand); color: #fff; border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(51,117,193,.3), inset 0 0 0 1px rgba(255,255,255,.35);
   font-family: var(--font-mono); font-size: 13px; letter-spacing: .1em;
   opacity: 0; transform: translateY(10px); transition: opacity .3s, transform .3s;
   pointer-events: none;
