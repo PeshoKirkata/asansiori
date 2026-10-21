@@ -171,10 +171,12 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 500; 
 
 .nav .nav-mobile-cta { display: none; }
 
-@media (max-width: 1080px) {
+@media (max-width: 1260px) {
   .header-phone { display: none; }
+  .nav a { padding: 10px 11px; }
+  .nav a[aria-current="page"]::after { left: 11px; right: 11px; }
 }
-@media (max-width: 900px) {
+@media (max-width: 1040px) {
   .nav-toggle { display: inline-flex; }
   .header-cta { display: none; }
   .nav {
@@ -549,3 +551,36 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 500; 
 .sub-brand { display: block; height: 40px; width: auto; margin-bottom: 20px; }
 .sub-brand-lg { height: 52px; margin: 28px 0 0; }
 .site-footer .sub-brand { height: 34px; margin: 24px 0 0; opacity: .9; }
+
+/* ---------- Фирмата (MGM) ---------- */
+
+.company-band { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+.company-card { padding: clamp(28px, 4vw, 44px); background: var(--paper); border: 1px solid var(--line); border-top: 2px solid var(--gold); border-radius: var(--radius); }
+.company-card img { height: 48px; width: auto; }
+.company-card dl { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 32px 0 0; }
+.company-card dt { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-ink); }
+.company-card dd { margin: 6px 0 0; font-family: var(--font-display); font-size: 22px; }
+@media (max-width: 900px) { .company-band { grid-template-columns: 1fr; } }
+
+.company-stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.company-stats > div { padding: 32px 24px 8px 0; }
+.company-stats > div + div { padding-left: 24px; border-left: 1px solid var(--line); }
+.company-stats b { display: block; font-family: var(--font-display); font-weight: 500; font-size: clamp(34px, 4vw, 52px); line-height: 1; }
+.company-stats b sup { font-size: .45em; color: var(--gold); vertical-align: top; }
+.company-stats span { display: block; margin-top: 12px; color: var(--muted); font-size: 15px; }
+@media (max-width: 800px) {
+  .company-stats { grid-template-columns: 1fr 1fr; }
+  .company-stats > div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .company-stats > div:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+
+.partners { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.partner { display: grid; gap: 12px; padding: 32px 28px; background: rgba(50, 66, 100, 0.35); border: 1px solid var(--line-on-dark); border-radius: var(--radius); }
+.partner .tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.partner b { font-family: var(--font-display); font-weight: 500; font-size: 24px; color: var(--bone); }
+.partner span:last-child { color: var(--muted-on-dark); font-size: 15px; }
+@media (max-width: 900px) { .partners { grid-template-columns: 1fr; } }
+
+.footer-company { display: grid; gap: 12px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line-on-dark); font-size: 13px; max-width: 34ch; }
+.footer-company img { height: 30px; width: auto; opacity: .9; }
+.footer-company:hover span { color: var(--bone); }
