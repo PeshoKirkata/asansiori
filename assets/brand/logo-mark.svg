@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MGM Lifts">
-  <rect x="2" y="2" width="60" height="60" rx="6" fill="#101317"/>
-  <path d="M16 48V16l16 17 16-17v32" fill="none" stroke="#f4f1eb" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/>
-  <path d="M32 40l-6 8h12z" fill="#c9a063"/>
+  <rect x="2" y="2" width="60" height="60" rx="6" fill="#0b1928"/>
+  <path d="M16 48V16l16 17 16-17v32" fill="none" stroke="#edf2f7" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M32 40l-6 8h12z" fill="#8cbbe6"/>
 </svg>
