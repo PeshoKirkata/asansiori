@@ -16,7 +16,7 @@
     .bb-tile img { max-height: 72px; }
     .bb-tile.wide { grid-column: span 2; }
     .bb-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 10px; }
-    .swatch-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .swatch-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
     .color { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
     .color div { height: 140px; }
     .color p { margin: 0; padding: 14px 16px; font-size: 14px; }
@@ -75,19 +75,19 @@
 
         <div class="construct">
           <svg viewBox="0 0 64 64" aria-label="Конструкция на знака">
-            <defs><pattern id="g" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M4 0H0V4" fill="none" stroke="#3375c1" stroke-opacity=".1" stroke-width=".2"/></pattern></defs>
+            <defs><pattern id="g" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M4 0H0V4" fill="none" stroke="#141f35" stroke-opacity=".1" stroke-width=".2"/></pattern></defs>
             <rect width="64" height="64" fill="url(#g)"/>
-            <rect x="2" y="2" width="60" height="60" rx="6" fill="none" stroke="#3375c1" stroke-width="3"/>
-            <path d="M16 48V16l16 17 16-17v32" fill="none" stroke="#3375c1" stroke-width="5" stroke-linecap="square"/>
-            <path d="M32 40l-6 8h12z" fill="#8cbbe6"/>
-            <path d="M32 2v60M2 32h60" stroke="#8cbbe6" stroke-width=".3" stroke-dasharray="1 1"/>
+            <rect x="2" y="2" width="60" height="60" rx="6" fill="none" stroke="#141f35" stroke-width="3"/>
+            <path d="M16 48V16l16 17 16-17v32" fill="none" stroke="#141f35" stroke-width="5" stroke-linecap="square"/>
+            <path d="M32 40l-6 8h12z" fill="#cfa75a"/>
+            <path d="M32 2v60M2 32h60" stroke="#cfa75a" stroke-width=".3" stroke-dasharray="1 1"/>
           </svg>
           <div>
             <h3 class="h-md" style="margin-bottom:14px">Правила</h3>
             <ul class="chips" style="margin-top:0">
               <li>Минимален размер: 24 px / 8 мм</li>
               <li>Свободно поле: ½ от височината на знака</li>
-              <li>Знакът е в #3375C1, стрелката е светлосиня. Върху синьо — всичко бяло</li>
+              <li>Знакът е в тъмносиньо #141F35, стрелката е златна. Върху тъмен фон знакът е в слонова кост</li>
               <li>Без сенки, градиенти и завъртане</li>
             </ul>
             <p style="margin-top:24px;color:var(--muted)">Файлове: <code>assets/brand/logo-dark.svg</code>, <code>logo-light.svg</code>, <code>logo-mark.svg</code>, <code>favicon.svg</code></p>
@@ -115,15 +115,18 @@
       <div class="wrap">
         <div class="section-head">
           <span class="eyebrow">02 — Цветове</span>
-          <h2 class="h-lg">Едно синьо. Изцяло.</h2>
-          <p class="lead">Основният цвят е синьото #3375C1. С него са оцветени хедърът, hero секцията, футърът и всички цветни блокове. Останалото е бяло и светло сиво. Черни и тъмносини площи няма.</p>
+          <h2 class="h-lg">Нощно синьо и злато.</h2>
+          <p class="lead">Основата е тъмносиньо #141F35. Тъмните площи са преливка от #080F19 до #24304A с меки отблясъци в #324264, а златните линии подчертават структурата, както водачите в асансьорна шахта. Златото е само за линии и акценти, никога за големи площи.</p>
         </div>
         <div class="swatch-row">
-          <div class="color"><div style="background:#3375c1"></div><p><b>Синьо MGM</b><span>#3375C1 · основен</span></p></div>
-          <div class="color"><div style="background:#ffffff"></div><p><b>Бяло</b><span>#FFFFFF · текст върху синьо</span></p></div>
-          <div class="color"><div style="background:#d6e7fa"></div><p><b>Светло синьо</b><span>#D6E7FA · акцент върху синьо</span></p></div>
-          <div class="color"><div style="background:#f1f2f4"></div><p><b>Светло сиво</b><span>#F1F2F4</span></p></div>
-          <div class="color"><div style="background:#9aa3ab"></div><p><b>Инокс</b><span>#9AA3AB</span></p></div>
+<div class="color"><div style="background:#141f35"></div><p><b>Тъмносиня основа</b><span>#141F35 · основен</span></p></div>
+          <div class="color"><div style="background:#24304a"></div><p><b>Средносиня преливка</b><span>#24304A</span></p></div>
+          <div class="color"><div style="background:#324264"></div><p><b>Светлосин отблясък</b><span>#324264</span></p></div>
+          <div class="color"><div style="background:#080f19"></div><p><b>Дълбочина</b><span>#080F19 · начало на преливката</span></p></div>
+          <div class="color"><div style="background:#cfa75a"></div><p><b>Злато</b><span>#CFA75A · линии и акценти</span></p></div>
+          <div class="color"><div style="background:#f4f2ee"></div><p><b>Слонова кост</b><span>#F4F2EE · светъл фон</span></p></div>
+        </div>
+        <div class="color" style="margin-top:16px"><div style="height:180px;background:var(--grad-dark);position:relative"><div style="position:absolute;left:0;right:0;top:50%;height:1px;background:var(--gold-line)"></div></div><p><b>Фонова преливка</b><span>#080F19 → #24304A, меки отблясъци в #324264, златни линии</span></p>
         </div>
       </div>
     </section>
