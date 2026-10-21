@@ -543,3 +543,9 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 500; 
   .reveal { opacity: 1; transform: none; }
   .lift-door { display: none; }
 }
+
+/* ---------- Под-марка Verton ---------- */
+
+.sub-brand { display: block; height: 40px; width: auto; margin-bottom: 20px; }
+.sub-brand-lg { height: 52px; margin: 28px 0 0; }
+.site-footer .sub-brand { height: 34px; margin: 24px 0 0; opacity: .9; }
