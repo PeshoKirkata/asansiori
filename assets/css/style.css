@@ -527,3 +527,115 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 400; line
   .call-fab.show { opacity: 1; transform: none; pointer-events: auto; }
   .call-fab .ic { width: 20px; height: 20px; color: var(--gold-2); }
 }
+
+/* ================= Страница Асансьори ================= */
+
+.page-intro { padding: clamp(40px, 6vw, 80px) 0 clamp(28px, 4vw, 44px); background: var(--paper); }
+.page-intro h1 { font-size: clamp(34px, 4.4vw, 56px); letter-spacing: -0.025em; margin-bottom: 18px; }
+.page-intro .lead { color: var(--muted); max-width: 52ch; margin: 0; }
+
+/* Меню в страницата */
+.subnav { position: sticky; top: 76px; z-index: 30; background: rgba(251, 250, 248, 0.96); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.subnav .wrap { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+.subnav .wrap::-webkit-scrollbar { display: none; }
+.subnav a { position: relative; padding: 16px 16px; font-weight: 600; font-size: 15px; color: var(--muted); white-space: nowrap; }
+.subnav a:first-child { padding-left: 0; }
+.subnav a:hover, .subnav a.active { color: var(--text); }
+.subnav a.active::after { content: ""; position: absolute; left: 16px; right: 16px; bottom: -1px; height: 2px; background: var(--gold); }
+.subnav a:first-child.active::after { left: 0; }
+[id] { scroll-margin-top: 140px; }
+
+/* Видове */
+.kinds { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.kind { padding: 28px 24px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
+.kind .ic { width: 40px; height: 40px; color: var(--gold-ink); margin-bottom: 20px; }
+.kind h3 { font-size: 20px; font-weight: 500; margin-bottom: 8px; }
+.kind p { margin: 0; color: var(--muted); font-size: 15px; }
+.kind .drive-tag { display: block; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 14px; color: var(--text); }
+@media (max-width: 1000px) { .kinds { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .kinds { gap: 10px; } .kind { padding: 20px 16px; } .kind .ic { width: 32px; height: 32px; margin-bottom: 14px; } .kind h3 { font-size: 17px; } .kind p { font-size: 14px; } }
+
+/* Шоурум на моделите */
+.viewer { display: grid; grid-template-columns: 220px 1fr; gap: clamp(24px, 4vw, 56px); }
+.viewer-list { display: grid; gap: 4px; align-content: start; }
+.viewer-list button {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; padding: 16px 18px; text-align: left;
+  background: transparent; border: 1px solid transparent; border-radius: var(--radius); cursor: pointer;
+  font: 500 18px var(--font-display); color: var(--muted); transition: background .2s, color .2s, border-color .2s;
+}
+.viewer-list button .ic { width: 18px; height: 18px; opacity: 0; transition: opacity .2s; }
+.viewer-list button:hover { color: var(--text); background: var(--bone); }
+.viewer-list button[aria-selected="true"] { color: var(--text); background: var(--paper); border-color: var(--line); }
+.viewer-list button[aria-selected="true"] .ic { opacity: 1; color: var(--gold-ink); }
+.viewer-panel { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: start; }
+.viewer-panel[hidden] { display: none; }
+.viewer-photos { display: grid; gap: 12px; }
+.viewer-photos.two { grid-template-columns: 1fr 1fr; }
+.viewer-photos figure { margin: 0; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--radius); background: var(--bone); }
+.viewer-photos.two figure { aspect-ratio: 3 / 4; }
+.viewer-photos img { width: 100%; height: 100%; object-fit: cover; }
+.viewer-info h3 { font-size: clamp(30px, 3.4vw, 44px); margin-bottom: 16px; }
+.viewer-info > p { color: var(--muted); font-size: 18px; margin-bottom: 28px; }
+.spec { margin: 0 0 32px; border-top: 1px solid var(--line); }
+.spec > div { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.spec dt { color: var(--muted); }
+.spec dd { margin: 0; font-weight: 600; }
+@media (max-width: 1000px) {
+  .viewer { grid-template-columns: 1fr; }
+  .viewer-list { grid-auto-flow: column; grid-auto-columns: max-content; overflow-x: auto; scrollbar-width: none; gap: 8px; }
+  .viewer-list button { padding: 10px 16px; font-size: 16px; border-color: var(--line); }
+  .viewer-list button .ic { display: none; }
+  .viewer-list button[aria-selected="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+}
+@media (max-width: 760px) { .viewer-panel { grid-template-columns: 1fr; } }
+
+/* Материали на светъл фон */
+.mat-head { display: flex; justify-content: space-between; align-items: end; gap: 16px 40px; flex-wrap: wrap; margin-bottom: 32px; }
+.tabs.light { border-color: var(--line); background: var(--paper); }
+.tabs.light button { color: var(--muted); }
+.tabs.light button[aria-selected="true"] { background: var(--ink); color: #fff; }
+.swatches.big { grid-template-columns: repeat(6, 1fr); }
+@media (max-width: 1000px) { .swatches.big { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 600px) { .swatches.big { grid-template-columns: repeat(2, 1fr); } }
+.swatches.big .swatch figure { background: var(--bone); }
+.bone .swatch p, .swatch p { color: inherit; }
+
+/* Таблица със задвижване */
+.dtable { width: 100%; border-collapse: collapse; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.dtable th, .dtable td { padding: 18px 24px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.dtable thead th { padding-top: 28px; padding-bottom: 24px; background: var(--paper); }
+.dtable thead th .ic { display: block; width: 36px; height: 36px; color: var(--gold-ink); margin-bottom: 14px; }
+.dtable thead th span { font: 500 22px var(--font-display); }
+.dtable thead th small { display: block; margin-top: 6px; font: 600 14px var(--font-body); color: var(--gold-ink); }
+.dtable tbody th { width: 24%; color: var(--muted); font-weight: 500; font-size: 15px; }
+.dtable td { width: 38%; font-weight: 600; }
+.dtable tr:last-child th, .dtable tr:last-child td { border-bottom: 0; }
+.dtable .dia img { max-width: 130px; mix-blend-mode: multiply; }
+@media (max-width: 760px) {
+  .dtable, .dtable thead, .dtable tbody, .dtable tr { display: block; width: 100%; }
+  .dtable thead tr { display: grid; grid-template-columns: 1fr 1fr; }
+  .dtable thead th:first-child { display: none; }
+  .dtable tbody tr { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); }
+  .dtable tbody th { grid-column: 1 / -1; width: auto; padding: 14px 16px 0; border: 0; }
+  .dtable td { width: auto; padding: 6px 16px 14px; border: 0; font-size: 15px; }
+  .dtable th, .dtable thead th { padding-left: 16px; padding-right: 16px; }
+  .dtable thead th span { font-size: 17px; }
+  .dtable thead th small { font-size: 12px; }
+  .dtable thead th .ic { width: 28px; height: 28px; }
+  .dtable .dia img { max-width: 100%; }
+}
+
+/* Помощ при избор */
+.help { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center; padding: clamp(32px, 5vw, 56px); background: var(--grad-dark); color: var(--bone); border-radius: 6px; position: relative; overflow: hidden; }
+.help::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--gold-line); }
+.help h2 { font-size: clamp(26px, 3vw, 38px); margin-bottom: 12px; }
+.help p { margin: 0; color: var(--muted-on-dark); max-width: 46ch; }
+.help .actions { justify-content: flex-end; }
+.help .btn-primary { background: var(--gold); color: var(--ink); }
+.help .btn-primary:hover { background: var(--gold-2); }
+.help .call { color: var(--bone); }
+.help .call small { color: var(--muted-on-dark); }
+.help .call .ic { color: var(--gold); }
+@media (max-width: 860px) { .help { grid-template-columns: 1fr; } .help .actions { justify-content: flex-start; } }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

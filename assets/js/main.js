@@ -78,19 +78,62 @@
     update();
   }
 
-  // Табове за материали
-  document.querySelectorAll("[data-tabs]").forEach(function (group) {
-    var buttons = group.querySelectorAll("[role=tab]");
-    buttons.forEach(function (btn) {
+  // Табове (материали, модели). Хеш в адреса отваря съответния таб.
+  var tabGroups = document.querySelectorAll("[data-tabs]");
+  var selectTab = function (btn, focus) {
+    var group = btn.closest("[data-tabs]");
+    group.querySelectorAll("[role=tab]").forEach(function (b) {
+      var on = b === btn;
+      b.setAttribute("aria-selected", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+      document.getElementById(b.getAttribute("aria-controls")).hidden = !on;
+    });
+    if (focus) btn.focus();
+  };
+  tabGroups.forEach(function (group) {
+    var buttons = Array.prototype.slice.call(group.querySelectorAll("[role=tab]"));
+    buttons.forEach(function (btn, i) {
       btn.addEventListener("click", function () {
-        buttons.forEach(function (b) {
-          var on = b === btn;
-          b.setAttribute("aria-selected", on ? "true" : "false");
-          document.getElementById(b.getAttribute("aria-controls")).hidden = !on;
-        });
+        selectTab(btn);
+        var id = btn.getAttribute("aria-controls");
+        if (group.hasAttribute("data-hash")) {
+          history.replaceState(null, "", "#" + id);
+        }
+      });
+      btn.addEventListener("keydown", function (e) {
+        var d = e.key === "ArrowRight" || e.key === "ArrowDown" ? 1 : e.key === "ArrowLeft" || e.key === "ArrowUp" ? -1 : 0;
+        if (d) { e.preventDefault(); selectTab(buttons[(i + d + buttons.length) % buttons.length], true); }
       });
     });
   });
+  var openFromHash = function () {
+    var id = location.hash.slice(1);
+    if (!id) return;
+    var btn = document.querySelector('[role=tab][aria-controls="' + id + '"]');
+    if (btn) {
+      selectTab(btn);
+      var host = btn.closest("[data-tabs]").closest("section");
+      if (host) host.scrollIntoView();
+    }
+  };
+  openFromHash();
+  window.addEventListener("hashchange", openFromHash);
+
+  // Меню в страницата: маркира секцията, която се вижда
+  var subLinks = document.querySelectorAll(".subnav a");
+  if (subLinks.length && "IntersectionObserver" in window) {
+    var map = {};
+    subLinks.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a; });
+    var so = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          subLinks.forEach(function (a) { a.classList.remove("active"); });
+          map[e.target.id].classList.add("active");
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    Object.keys(map).forEach(function (id) { var el = document.getElementById(id); if (el) so.observe(el); });
+  }
 
   // Форма за запитване без сървър: съставя имейл в пощенския клиент
   var form = document.querySelector("#inquiry");
@@ -101,6 +144,10 @@
     if (tema && sel) {
       Array.prototype.forEach.call(sel.options, function (o) { if (o.text === tema) sel.value = o.value; });
     }
+    // ?model=MG-4 попълва съобщението
+    var model = new URLSearchParams(location.search).get("model");
+    var msg = form.querySelector("[name=message]");
+    if (model && msg && !msg.value) msg.value = /платформа/i.test(model) ? "Интересувам се от товарна платформа." : "Интересувам се от кабина " + model + ".";
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.reportValidity()) return;
