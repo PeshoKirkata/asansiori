@@ -40,16 +40,15 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
-  // Етажен индикатор: всяка секция с data-floor е „етаж“
+  // Етажен индикатор: всяка секция с data-floor е етаж
   var floors = Array.prototype.slice.call(document.querySelectorAll("[data-floor]"));
   if (floors.length) {
     var fi = document.createElement("div");
     fi.className = "floor-indicator";
     fi.setAttribute("aria-hidden", "true");
-    fi.innerHTML = '<span class="fi-arrow">▲</span><span class="fi-num">00</span><span class="fi-name"></span>';
+    fi.innerHTML = '<span class="fi-arrow">▲</span><span class="fi-num">1</span>';
     document.body.appendChild(fi);
     var num = fi.querySelector(".fi-num");
-    var name = fi.querySelector(".fi-name");
     var lastY = window.scrollY;
     var current = null;
 
@@ -67,7 +66,6 @@
       if (active && active !== current) {
         current = active;
         num.textContent = active.getAttribute("data-floor");
-        name.textContent = active.getAttribute("data-floor-name") || "";
       }
     };
     var ticking = false;
@@ -94,7 +92,7 @@
     });
   });
 
-  // Форма за запитване — без сървър: съставя имейл в пощенския клиент
+  // Форма за запитване без сървър: съставя имейл в пощенския клиент
   var form = document.querySelector("#inquiry");
   if (form) {
     form.addEventListener("submit", function (e) {
@@ -105,16 +103,15 @@
       var body = [
         "Име: " + d.get("name"),
         "Телефон: " + d.get("phone"),
-        "Имейл: " + d.get("email"),
-        "Тип: " + d.get("type"),
-        "Обект: " + (d.get("site") || "—"),
+        "Имейл: " + (d.get("email") || "-"),
+        "Тема: " + d.get("type"),
         "",
         d.get("message")
       ].join("\n");
       window.location.href = "mailto:" + form.getAttribute("data-to") +
         "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
       var status = form.querySelector(".form-status");
-      if (status) status.textContent = "Отваряме пощенския ви клиент с попълненото запитване.";
+      if (status) status.textContent = "Отваряме имейл с попълненото запитване.";
     });
   }
 
