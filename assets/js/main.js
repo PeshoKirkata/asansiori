@@ -95,6 +95,12 @@
   // Форма за запитване без сървър: съставя имейл в пощенския клиент
   var form = document.querySelector("#inquiry");
   if (form) {
+    // ?tema=Сервиз избира темата предварително
+    var tema = new URLSearchParams(location.search).get("tema");
+    var sel = form.querySelector("[name=type]");
+    if (tema && sel) {
+      Array.prototype.forEach.call(sel.options, function (o) { if (o.text === tema) sel.value = o.value; });
+    }
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.reportValidity()) return;
@@ -105,6 +111,8 @@
         "Телефон: " + d.get("phone"),
         "Имейл: " + (d.get("email") || "-"),
         "Тема: " + d.get("type"),
+        "Сграда: " + (d.get("building") || "-"),
+        "Етажи: " + (d.get("floors") || "-"),
         "",
         d.get("message")
       ].join("\n");
@@ -113,6 +121,14 @@
       var status = form.querySelector(".form-status");
       if (status) status.textContent = "Отваряме имейл с попълненото запитване.";
     });
+  }
+
+  // Мобилният бутон за обаждане се показва след първия екран
+  var fab = document.querySelector(".call-fab");
+  if (fab) {
+    var onScroll = function () { fab.classList.toggle("show", window.scrollY > window.innerHeight * 0.8); };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
   }
 
   var yearEl = document.querySelectorAll("[data-year]");
