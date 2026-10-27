@@ -35,6 +35,18 @@ assets/img/       Снимки: kabini/, oblitsovki/, podove/, tehnika/
 - Шрифтове: Unbounded за заглавия, Manrope за текст (Google Fonts).
 - Икони: [Solar](https://www.figma.com/community/file/1166831539721848736) от 480 Design, стил Line Duotone, лиценз [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Иконите са вградени директно в HTML.
 
+## Модели
+
+| Име на сайта | Старо име | Защо |
+|---|---|---|
+| Verton Standard | Standard | |
+| Verton Inox | Inox | |
+| Verton Lumen | MG-3 | „светлина“ на латински: светлата кабина |
+| Verton Arbor | MG-4 | „дърво“ на латински, в механиката и „вал“: кабината с дървесна визия |
+| Verton Cargo | Товарна платформа | |
+
+Файловете на снимките (`mg-3.jpg`, `mg-4.jpg`, `tovarna-*.jpg`) са със старите имена.
+
 ## Източник на съдържанието
 
 Информацията и снимките на асансьорите са от старите сайтове `lift-mgm.com/mgm-bg` и `mgm-lifts.com`. Текстовете са написани наново.

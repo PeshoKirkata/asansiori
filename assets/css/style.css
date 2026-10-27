@@ -556,12 +556,12 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 400; line
 @media (max-width: 520px) { .kinds { gap: 10px; } .kind { padding: 20px 16px; } .kind .ic { width: 32px; height: 32px; margin-bottom: 14px; } .kind h3 { font-size: 17px; } .kind p { font-size: 14px; } }
 
 /* Шоурум на моделите */
-.viewer { display: grid; grid-template-columns: 220px 1fr; gap: clamp(24px, 4vw, 56px); }
+.viewer { display: grid; grid-template-columns: 240px 1fr; gap: clamp(24px, 4vw, 56px); }
 .viewer-list { display: grid; gap: 4px; align-content: start; }
 .viewer-list button {
   display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; padding: 16px 18px; text-align: left;
   background: transparent; border: 1px solid transparent; border-radius: var(--radius); cursor: pointer;
-  font: 500 18px var(--font-display); color: var(--muted); transition: background .2s, color .2s, border-color .2s;
+  font: 500 16px var(--font-display); color: var(--muted); white-space: nowrap; transition: background .2s, color .2s, border-color .2s;
 }
 .viewer-list button .ic { width: 18px; height: 18px; opacity: 0; transition: opacity .2s; }
 .viewer-list button:hover { color: var(--text); background: var(--bone); }

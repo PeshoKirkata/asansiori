@@ -144,10 +144,10 @@
     if (tema && sel) {
       Array.prototype.forEach.call(sel.options, function (o) { if (o.text === tema) sel.value = o.value; });
     }
-    // ?model=MG-4 попълва съобщението
+    // ?model=Verton+Arbor попълва съобщението
     var model = new URLSearchParams(location.search).get("model");
     var msg = form.querySelector("[name=message]");
-    if (model && msg && !msg.value) msg.value = /платформа/i.test(model) ? "Интересувам се от товарна платформа." : "Интересувам се от кабина " + model + ".";
+    if (model && msg && !msg.value) msg.value = /cargo/i.test(model) ? "Интересувам се от товарна платформа " + model + "." : "Интересувам се от кабина " + model + ".";
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.reportValidity()) return;
