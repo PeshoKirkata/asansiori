@@ -639,3 +639,20 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 400; line
 @media (max-width: 860px) { .help { grid-template-columns: 1fr; } .help .actions { justify-content: flex-start; } }
 
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Кабини на началната: автоматично плъзгане */
+.models-big.marquee {
+  display: block; overflow: hidden; padding-bottom: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+.marquee-track { display: flex; gap: 16px; width: max-content; animation: marquee 45s linear infinite; }
+.marquee-track > a { flex: none; width: clamp(200px, 21vw, 280px); }
+.models-big.marquee:hover .marquee-track,
+.models-big.marquee:focus-within .marquee-track,
+.models-big.marquee.touch .marquee-track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(calc(-50% - 8px)); } }
+@media (prefers-reduced-motion: reduce) {
+  .models-big.marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+  .marquee-track { animation: none; }
+}

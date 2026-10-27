@@ -170,6 +170,25 @@
     });
   }
 
+  // Кабините на началната страница се плъзгат сами: картите се дублират,
+  // за да тече лентата безкрайно. Копията са скрити за екранни четци.
+  document.querySelectorAll("[data-marquee]").forEach(function (row) {
+    var track = document.createElement("div");
+    track.className = "marquee-track";
+    while (row.firstChild) track.appendChild(row.firstChild);
+    Array.prototype.slice.call(track.children).forEach(function (card) {
+      var copy = card.cloneNode(true);
+      copy.setAttribute("aria-hidden", "true");
+      copy.tabIndex = -1;
+      copy.querySelectorAll("img").forEach(function (img) { img.alt = ""; });
+      track.appendChild(copy);
+    });
+    row.appendChild(track);
+    row.classList.add("marquee");
+    row.addEventListener("touchstart", function () { row.classList.add("touch"); }, { passive: true });
+    row.addEventListener("touchend", function () { row.classList.remove("touch"); });
+  });
+
   // Мобилният бутон за обаждане се показва след първия екран
   var fab = document.querySelector(".call-fab");
   if (fab) {
